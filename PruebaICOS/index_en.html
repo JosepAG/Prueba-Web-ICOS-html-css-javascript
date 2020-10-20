@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<!--[if IE 9 ]><html dir="ltr" lang="en" class="no-js ie9"><![endif]-->
+<!--[if gt IE 9 ]><!--><html dir="ltr" lang="en" class="no-js"><!--<![endif]-->
+<head>
+
+<meta charset="utf-8">
+<!-- 
+	=================================================
+	    Realisierung: Neonaut GmbH // neonaut.de
+	                                          __
+	      ____  ___  ____  ____  ____ ___  __/ /_
+	     / __ \/ _ \/ __ \/ __ \/ __ `/ / / / __/
+	    / / / /  __/ /_/ / / / / /_/ / /_/ / /_
+	   /_/ /_/\___/\____/_/ /_/\__,_/\__,_/\__/
+	
+	=================================================
+
+	This website is powered by TYPO3 - inspiring people to share!
+	TYPO3 is a free open source Content Management Framework initially created by Kasper Skaarhoj and licensed under GNU/GPL.
+	TYPO3 is copyright 1998-2016 of Kasper Skaarhoj. Extensions are copyright of their respective owners.
+	Information and contribution at http://typo3.org/
+-->
+
+
+
+<title>ICOS</title>
+<meta name="generator" content="TYPO3 CMS">
+
+
+<link rel="stylesheet" type="text/css" href="./css/stylesheet_a0a22578ad.css" media="all">
+<link rel="stylesheet" type="text/css" href="./css/ti_projects.min.css" media="all">
+<link rel="stylesheet" type="text/css" href="./css/theme.css" media="all">
+
+
+
+<script src="./js/jquery.min.js" type="text/javascript"></script>
+<script src="./js/jquery-ui.min.js" type="text/javascript"></script>
+<script src="//use.typekit.net/nis0rfe.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+/*_scriptCode*/
+
+			// decrypt helper function
+		function decryptCharcode(n,start,end,offset) {
+			n = n + offset;
+			if (offset > 0 && n > end) {
+				n = start + (n - end - 1);
+			} else if (offset < 0 && n < start) {
+				n = end - (start - n - 1);
+			}
+			return String.fromCharCode(n);
+		}
+			// decrypt string
+		function decryptString(enc,offset) {
+			var dec = "";
+			var len = enc.length;
+			for(var i=0; i < len; i++) {
+				var n = enc.charCodeAt(i);
+				if (n >= 0x2B && n <= 0x3A) {
+					dec += decryptCharcode(n,0x2B,0x3A,offset);	// 0-9 . , - + / :
+				} else if (n >= 0x40 && n <= 0x5A) {
+					dec += decryptCharcode(n,0x40,0x5A,offset);	// A-Z @
+				} else if (n >= 0x61 && n <= 0x7A) {
+					dec += decryptCharcode(n,0x61,0x7A,offset);	// a-z
+				} else {
+					dec += enc.charAt(i);
+				}
+			}
+			return dec;
+		}
+			// decrypt spam-protected emails
+		function linkTo_UnCryptMailto(s) {
+			location.href = decryptString(s,-2);
+		}
+		
+
+/*]]>*/
+</script>
+
+<meta charset=utf-8>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <link rel="icon" href="/favicon.ico" type="image/x-icon">
+            <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+            <script>try{Typekit.load();}catch(e){}</script><meta property="og:type" content="website"><meta property="og:title" content="ICOS-D - Thünen Projekte"><meta property="og:site_name" content="Thünen Projekte"><meta property="og:description" content=""><meta property="og:locale" content="en_EN"><meta property="og:locale:alternate" content="de_DE"><link rel="apple-touch-icon" sizes="180x180" href="/typo3conf/ext/nn_ti_base/Resources/Public/favicons/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="/typo3conf/ext/nn_ti_base/Resources/Public/favicons/android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="/typo3conf/ext/nn_ti_base/Resources/Public/favicons/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/typo3conf/ext/nn_ti_base/Resources/Public/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/typo3conf/ext/nn_ti_base/Resources/Public/favicons/mstile-144x144.png">
+<link rel="alternate" type="application/rss+xml" title="Aktuelle Meldungen" href="/rss">
+</head>
+<body class="ti-style--0 ti-layout ti-layout-- ti-uid--30 ">
+<div class="ti-container">
+	<header class="ti-pagehead">
+    <div class="ti-pagehead__head">
+        <a href="https://www.icos-ri.eu/" title="Integrated Carbon Observation System (ICOS)">
+            <div class="ti-pagehead__logo">ICOS-D</div>
+        </a>
+
+        <!-- Search -->
+        <!--
+        <div class="ti-pagehead__search">
+            <form method="post" action="//search/">
+                <input name="tx_indexedsearch[sword]"
+                       class="ti-pagehead__searchfield tx-indexedsearch-searchbox-sword sword"
+                       placeholder="search term">
+                <input type="hidden" name="tx_indexedsearch[ext]" value="1">
+                <input type="hidden" name="tx_indexedsearch[results]" value="20">
+                <input type="submit" class="ti-pagehead__searchbutton" value="">
+            </form>
+        </div>
+        -->
+    </div>
+
+    <!-- Head Image -->
+     <a href="http://www.ceam.es/GVAceam/ceam_en/home.htm" title="Mediterranean Center for Environmental Studies (CEAM)">
+    <div class="ti-pagehead__image"></div>
+</a>
+
+</header>
+
+	<!-- Main Navigation -->
+<nav class="ti-mainnav">
+    <ul class="ti-mainnav__items">
+        <li class="ti-mainnav__item act cur sub"><a class="ti-mainnav__link ti-mainnav__link--home" href="./index_en.html"><i class="fa fa-home"></i></a></li>
+        <li class="ti-mainnav__item "><a href="./componentes_en.html" class="ti-mainnav__link">STATIONS</a></li><li class="ti-mainnav__item sub"><a href="./Equipo_en.html" class="ti-mainnav__link">TEAM</a></li><li class="ti-mainnav__item sub" ><a href="./index_ca.html" alt="Catalan" class="" title="Català"><img src="./images/Lengua.png" href="./index_ca.html" style="width:3%" align="right"></img></a></li><li class="ti-mainnav__item sub" ><a  href="./index.html" alt="Castellano" title="Castellano"><img  src="./images/Castellano2.png" style="width:3%" align="right"></img></a></li><!--<li class="ti-mainnav__item sub"><a href="/en/news-termine/events/" class="ti-mainnav__link">News & Events</a></li><li class="ti-mainnav__item sub"><a href="/en/presse/icoscapes-fotoausstellung/" class="ti-mainnav__link">Presse</a></li><li class="ti-mainnav__item sub"><a href="/en/publications/2019/" class="ti-mainnav__link">Publications</a></li><li class="ti-mainnav__item"><a href="/en/druckmedien/" class="ti-mainnav__link">Newsletter & More</a></li><li class="ti-mainnav__item ti-mainnav__item--lang"><a href="/icos-d/" class="ti-lang-switch" lang="de" title="Seite in deutsch"><img src="./images/language-flag-en.png" alt="deutsch" lang="de"></a></li><img src="./images/IconEnglishEU.jpg" style="width:0%" >-->
+    </ul>
+</nav>
+
+	
+<div class="content onecolumn">
+        <!-- Intro Section -->
+        <section class="ti-intro">
+            <!--TYPO3SEARCH_begin--><div id="c36" class="csc-default big"><p><b>	
+The Center for Environmental Studies of the Mediterranean is a center for research, development and technological innovation for the improvement of the environment in the Mediterranean.</b></p></div><div id="c38" class="csc-default"><div class="csc-header csc-header-n2"><h3>About CEAM</h3></div></div><div id="c37" class="csc-default multicol"><p>Our activity is focused on offering integrated proposals for environmental management in the field of atmosphere, ecosystems, human activities, and their interactions. This requires the participation of multidisciplinary teams with accurate knowledge to describe and understand the natural processes and those modified by human activities, in order to develop and offer sustainable management options adapted to the Mediterranean conditions.
+
+<p>Our scientific and technical team includes meteorological and climate experts; atmospheric chemistry and dynamics of air pollutants; numerical simulation; high precision analytical instrumentation, both laboratory and field; carbon cycle; ecosystem dynamics; fire ecology and forest restoration. A team that, over 25 years of research, has applied its knowledge and experience in the prediction of extreme weather events (heat waves, torrential rains); mitigation and adaptation to climate change; the prevention of wildfires and the recovery of burnt and desertified mountains; to the analysis and evaluation of air pollution in urban, rural and industrial environments and their impacts. Activities that we have carried out directly or in collaboration with the main international centers of environmental research and which we have applied throughout the Mediterranean area.</p></div><!--TYPO3SEARCH_end-->
+        </section>
+<div class="boxed">
+<p><b>Address:</b> Parque Tecnológico
+          C/ Charles R. Darwin, 14 
+          46980 - PATERNA - Valencia (España)
+<p><b>Contact:</b> +34 609 644 051 </p>
+
+</div>
+	<!-- Content -->
+	<!--<div class="content ti-container__column--right ti-container__column--wide">
+		<section>
+			<div class="boxed">
+				TYPO3SEARCH_begin<div id="c383" class="csc-default"><div class="csc-header csc-header-n1"><h1 class="csc-firstHeader">ICOS D</h1></div><p><b>Ein Beobachtungsnetzwerk für Treibhausgase</b>
+</p>
+<p>Die Konzentrationen von Kohlendioxid (CO2) und anderer Treibhausgase&nbsp;(THG) wie Methan (CH4) und Lachgas (N2O)  in der Atmosphäre steigen an, weil die globalen Stoffkreisläufe massiv  vom Menschen gestört werden. Die durch diesen Anstieg verursachten  Klimaveränderungen stellen eine große Herausforderung für die Menschheit  dar. Daher versuchen klimapolitische Maßnahmen die Emissionen von THG  zu verringern und so Effekte des Klimawandels abzumildern. Ob sie  Erfolg haben, wird auch von einer kontinuierlichen Bereitstellung neuer  Daten und Erkenntnisse abhängen, die die biogeochemischen Prozesse und  ihre Wechselwirkung mit dem Klima erschließen und Veränderungen von THG-Emissionen  durch unabhängige Messungen bestätigen können. Langfristige, präzise  und international vergleichbare Messungen sind ein entscheidendes  Hilfsmittel zur Verbesserung des Wissens über die komplexen  Wechselwirkungen zwischen dem Klima einerseits und Biosphäre,  Hydrosphäre sowie Atmosphäre andererseits. Sie sind die beste  Investition dafür, Überraschungen zu vermeiden und Unsicherheiten über  das Morgen zu verringern.&nbsp; 	 	 		 	 		 </p></div><div id="c384" class="csc-default"><div class="csc-textpic csc-textpic-center csc-textpic-above"><div class="csc-textpic-imagewrap" data-csc-images="1" data-csc-cols="2"><div class="csc-textpic-center-outer"><div class="csc-textpic-center-inner"><figure class="csc-textpic-image csc-textpic-last"><a href="https://icos-atc.lsce.ipsl.fr/stations" target="_blank" title="Die drei Netzwerke der europäischen Forschungsinfrastruktur ICOS (© )"><img src="/fileadmin/_processed_/csm_ICOS_networks_2012_web_deutsch_5cb763f5f2.jpg" width="620" height="264" data-photocredit="" alt=""></a><figcaption class="csc-textpic-caption">Die drei Netzwerke der europäischen Forschungsinfrastruktur ICOS<span class="creator" data-photocredit=""> (&copy;&nbsp;)</span></figcaption></figure></div></div></div><div class="csc-textpic-text"><p><b>Messungen mit höchster Präzision</b>
+</p>
+<p>ICOS strebt höchst mögliche Präzision der Beobachtungen an. Dafür werden viele Messungen standardisiert und die mit modernsten Analysengeräten durchgeführt. Die kontinuierlichen, qualitativ hochwertigen und standardisierten Messungen werden es erlauben:</p><ul><li>systematische Änderungen von THG-Flüssen trotz hoher interner Variabilität zu erkennen,</li><li>Unsicherheiten in entsprechenden Modellvorhersagen zu reduzieren,</li><li>frühzeitig vor negativen Entwicklungen zu warnen und</li><li>rechtzeitig Anpassungsmaßnahmen einzuleiten und den Erfolg von Klimaschutzmaßnahmen zu bewerten.</li></ul><p>Oberstes Ziel von ICOS-D, dem deutschen Beitrag zu dieser <a href="https://www.icos-ri.eu/" title="Opens external link in new window" target="_blank" class="external-link-new-window">europäischen Infrastruktur</a>, ist die langfristige Konsolidierung der weltweit führenden Beobachtungsnetze zu atmosphärischen THG-Konzentrationen und den Austauschflüssen mit terrestrischen und marinen Ökosystemen.
+</p>
+<p>Lesen Sie mehr über den <a href="/en/icos-d/hintergrund/" title="Opens internal link in current window" class="internal-link">Hintergrund</a>, die <a href="/en/icos-d/vorgeschichte/" title="Opens internal link in current window" class="internal-link">Vorgeschichte </a>und die <a href="/en/icos-d/komponenten/" title="Opens internal link in current window" class="internal-link">Komponenten </a>von ICOS-D.</p></div></div></div><div id="c385" class="csc-default"><div class="csc-header csc-header-n3"><h2>Projektflyer</h2></div><ul class="csc-uploads csc-uploads-0"><li><a href="/fileadmin/icos/Dokumente/ICOS_Flyer_2015_deutsch_final_v2.pdf">ICOS Flyer 2015 deutsch<span class="filesize">(1.6 MB)</span></a></li><li><a href="/fileadmin/icos/Dokumente/ICOS_Flyer_2015_englisch_final_v2.pdf">ICOS Flyer 2015 englisch<span class="filesize">(1.6 MB)</span></a></li></ul></div>TYPO3SEARCH_end
+			</div>
+		</section>
+	</div>
+
+</div>-->
+
+
+
+
+
+
+</body>
+</html>
